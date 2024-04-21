@@ -1,6 +1,7 @@
 package org.labcourse.digitalschool1.Students;
 
 import org.springframework.stereotype.Service;
+import java.util.List;
 
 @Service
 public class StudentServiceImpl implements StudentService{
@@ -23,6 +24,8 @@ public class StudentServiceImpl implements StudentService{
 
             return studentEntity;
     }
+   
+    
 
 
         
@@ -35,4 +38,9 @@ public class StudentServiceImpl implements StudentService{
       return studentRepository.save(studentEntity);
     }
     
-}
+  @Override
+    public List<StudentEntity> findAll() {
+       
+        return studentRepository.findAll();
+    }
+    
