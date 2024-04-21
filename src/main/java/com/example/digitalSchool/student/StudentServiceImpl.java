@@ -1,5 +1,7 @@
 package com.example.digitalSchool.student;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
@@ -34,9 +36,9 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
-    public List<StudentEntity> findAll() {
+    public Page<StudentEntity> findAll(Pageable pageable) {
 
-        return studentRepository.findAll();
+        return studentRepository.findAll(pageable);
     }
 
 }
