@@ -34,6 +34,7 @@ public class StudentController {
     }
 
     @PostMapping(path = "/students")
+    @ResponseStatus(HttpStatus.CREATED)
     public StudentEntity createStudent(@RequestBody StudentEntity studentEntity){
 
         return studentService.save(studentEntity);
