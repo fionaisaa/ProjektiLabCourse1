@@ -1,5 +1,8 @@
 package com.example.digitalSchool.student;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -32,6 +35,11 @@ public class StudentController {
     public StudentEntity createStudent(@RequestBody StudentEntity studentEntity){
 
         return studentService.save(studentEntity);
+    }
+     @GetMapping(path = "/students")
+    public  Page<StudentEntity> findAll(Pageable pageable){
+
+        return studentService.findAll(pageable);
     }
 
     @DeleteMapping(path = "/students")
