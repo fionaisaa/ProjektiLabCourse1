@@ -1,5 +1,5 @@
 package org.labcourse.digitalschool1.Students;
-
+import java.util.List;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -25,6 +25,14 @@ public class StudentController {
     public StudentEntity getStudentById(@PathVariable (name = "id") Long id){
 
         return studentService.findById(id);
+    }
+        @GetMapping(path = "/students")
+    public String getStudentName(){
+         public List<StudentEntity> findAll(){
+
+        return studentService.findAll();
+
+        
     }
 
     @GetMapping(path = "/students")
