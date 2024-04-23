@@ -12,7 +12,7 @@ public class Employee {
     @SequenceGenerator(
             name = "employee_sequence",
             sequenceName  = "employee_sequence",
-            allocationSize = 1
+            allocationSize = 5
     )
     @GeneratedValue(
             strategy = GenerationType.SEQUENCE,
